@@ -33,8 +33,9 @@ void main()
 	float z = texCoord.y - 0.5f;
 
 	// rotate around the X axis
-	y = y * cos(elevation) - z * sin(elevation);
+	float temp_y = y * cos(elevation) - z * sin(elevation);
 	z = y * sin(elevation) + z * cos(elevation);
+	y = temp_y;
 	
 	// rotate around the Y axis
 	float temp_x = x * cos(azimuth) + z * sin(azimuth);

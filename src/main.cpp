@@ -66,6 +66,8 @@ int main(int argc, char** argv) {
 	// Update the projection matrix used in the vertex shader
 	glHelper.setPerspectiveMatrix();
 
+	// Enable z-depth testing
+	glEnable(GL_DEPTH_TEST);
 
 	while (!glfwWindowShouldClose(window)) {
 		// Poll for and process events, e.g. keyboard handling
@@ -103,8 +105,8 @@ int main(int argc, char** argv) {
 		}
 		ImGui::End();
 
-		// Clear the color buffer
-		glClear(GL_COLOR_BUFFER_BIT);
+		// Clear the color and depth buffer (to which the fragment shader writes)
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// draw the vertices whose indices are listed in the EBO
 		glDrawElements(GL_TRIANGLES, nrIndices, GL_UNSIGNED_INT, 0);
