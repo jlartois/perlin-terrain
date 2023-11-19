@@ -7,7 +7,9 @@ perlin-terrain.exe <path to perlin noise texture>
 
 ![example screenshot](docs/example.png)
 
-This repository in **in progress**, new features will be added.
+This repository in **in progress**, new features will be added. Feel free to post any problems or questions under the **Issues** tab. **Pull request** are also welcome.
+
+The secondary goal of this repository is to provide you with a simple, documented OpenGL example. If you are interested in learning more about OpenGL, [learnopengl](https://learnopengl.com/) is a very thorough and well-made resource that is highly recommended.
 
 ### Dependencies
 
@@ -35,7 +37,13 @@ They can then be found in the `lib` folder, and will be build together with the 
 GLAD and ImGUI are already included as `.h` and `.cpp` files in the `include` directory.
 
 ### Building
+use CMake. 
 
-**Windows**: use CMake. OpenGL comes by default on Windows.
+**Windows**: OpenGL comes by default on Windows.
 
-**Linux and MacOS**: comming soon
+**MacOS**: (untested but) OpenGL should come by default on MacOS.
+
+**Linux**: (untested but) to setup OpenGL (if this was not already the case):
+```
+sudo apt-get install libglu1-mesa-dev
+```
