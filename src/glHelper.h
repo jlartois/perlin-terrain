@@ -21,7 +21,7 @@ public:
 		// Initialize GLFW
 		if (!glfwInit()) {
 			std::cerr << "Failed to initialize GLFW" << std::endl;
-			return false;
+			return nullptr;
 		}
 
 		// Set GLFW to not create an OpenGL context (version 330 core)
